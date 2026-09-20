@@ -96,11 +96,11 @@ if st.button('Generate Paper',type='primary',disabled=not ready):
     index,
     metadata,
     emb(),
-    per_topic=5,
-    total_limit=min(14, wanted_k),
+    per_topic=4,
+    total_limit=min(10, wanted_k),
 )
             if scenario.strip():
-                extra=retrieve(scenario.strip(),index,metadata,emb(),chapters=None,top_k=3)
+                extra=retrieve(scenario.strip(),index,metadata,emb(),chapters=None,top_k=2)
                 known={(c.get('page'),c.get('chunk_id')) for c in chunks}
                 chunks += [c for c in extra if (c.get('page'),c.get('chunk_id')) not in known]
             if not chunks:
