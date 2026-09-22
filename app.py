@@ -303,7 +303,7 @@ level_label = st.selectbox(
 
 year = (
     "first_year"
-    if "Part-I" in level_label
+    if level_label.startswith("FSC Part-I /")
     else "second_year"
 )
 
